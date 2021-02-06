@@ -1,0 +1,8 @@
+name: Hog
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: self-hosted
+    steps:
+      - run: ./Hog/CreateProject.sh example
+      
