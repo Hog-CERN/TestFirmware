@@ -3,9 +3,12 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: self-hosted
+    env:
+      HOG_PATH: /opt/Xilinx/Vivado/2019.2/bin
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'true'
+      - run: export PATH=${HOG_PATH}:$PATH
       - run: ./Hog/CreateProject.sh example
       
