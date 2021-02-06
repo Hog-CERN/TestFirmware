@@ -10,5 +10,6 @@ jobs:
         with: 
           submodules: 'true'
       - run: export PATH=${HOG_PATH}:$PATH
+      - run: echo $PATH
       - run: ./Hog/CreateProject.sh example
       
