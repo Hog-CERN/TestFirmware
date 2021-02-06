@@ -1,0 +1,32 @@
+<node fwinfo="endpoint;width=3">
+  <node id="Module_ID" permission="r" address="0x0" description="Module ID" fwinfo="endpoint;width=0">
+    <node id="L1CaloNumber" mask="0x0000ffff" permission="r" description="Module type number" />
+    <node id="Serial"       mask="0x00ff0000" permission="r" description="Module serial number" />
+    <node id="Issue"        mask="0x0f000000" permission="r" description="PCB Issue Number"/>
+    <node id="pcbUpdate"    mask="0xf0000000" permission="r" description="PCB Hardware Update number"/>
+  </node>
+
+  <node id="XmlVersion" permission="r" address="0x2" fwinfo="endpoint;width=1" description="version of XML files">
+    <node id="Version" permission="r" address="0x0" tags="xmlversion=__VERSION__"  description="version of XML files">
+      <node id="Patch" mask="0xffff" description="Patch Number"/>
+      <node id="Minor_Version" mask="0xff0000" description="Minor Version Number"/>
+      <node id="Major_Version" mask="0xff000000" description="Major Version Number"/>
+	 </node>
+    <node id="GitSHA" permission="r" address="0x1"  tags="xmlgitsha=__GIT_SHA__" description="XML Git commit 7-digit SHA of top file"/>
+   </node>
+  
+  <node id="BuildTimeAndDate" address="0x4"  fwinfo="endpoint;width=1" description="Firmware build time and date">
+    <node id="BuildDate" permission="r"    address="0x0"   description="Firmware build date in hexadecimal encoded binary 00mmddyyyy"/>
+    <node id="BuildTime" permission="r"    address="0x1"   description="Firmware build time in hexadecimal encoded binary 0000hhmmss"/>
+  </node>
+
+  <node id="FirmwareVersion" permission="r" address="0x6"  fwinfo="endpoint;width=1" description="Firmware Version Major.Minor.Patch">
+    <node id="Version" permission="r" address="0x0"  description="Firmware Version Major.Minor.Patch">
+      <node id="Patch" mask="0xffFF" description="Patch Number"/>
+      <node id="Minor_Version" mask="0xff0000" description="Minor Version Number"/>
+      <node id="Major_Version" mask="0xff000000" description="Major Version Number"/>
+    </node>
+    
+    <node id="GitSHA" permission="r"  address="0x1"  description="Git commit 7-digit SHA of the whole firmware repository"/> 
+  </node> 
+</node>

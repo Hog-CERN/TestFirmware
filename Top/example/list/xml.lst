@@ -1,0 +1,2 @@
+example/xml/common.xml example/ipbus/ipbus_decode_common.vhd
+example/xml/main.xml example/ipbus/ipbus_decode_main.vhd

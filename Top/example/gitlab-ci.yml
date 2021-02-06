@@ -1,0 +1,18 @@
+generate_project:example:
+    extends: .generate_project
+    variables:
+      extends: .vars
+      PROJECT_NAME: example
+
+simulate_project:example:
+    extends: .simulate_project
+    variables:
+      extends: .vars
+      PROJECT_NAME: example
+      SIMULATOR: vivadosim
+
+projjob:example:
+    extends: .projjob
+    variables:
+      extends: .vars
+      PROJECT_NAME: example

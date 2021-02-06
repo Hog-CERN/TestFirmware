@@ -1,0 +1,467 @@
+# PlanAhead Generated physical constraints 
+
+# clock and reset
+NET "rst" LOC = AA10 | PULLUP;
+NET "ck40_p" LOC = J3;
+NET "ck40_n" LOC = J1;
+NET "ck40_p" TNM_NET = ck40_p;
+TIMESPEC TS_ck40_p = PERIOD "ck40_p" 10 ns HIGH 50%;
+
+# VME signals
+NET "serial_id[*]" IOSTANDARD = LVTTL;
+NET "serial_id[0]" LOC = AB4;
+NET "serial_id[1]" LOC = Y5;
+NET "serial_id[2]" LOC = AB5;
+NET "serial_id[3]" LOC = Y6;
+#NET "serial_id[0]" LOC = Y3;  --INVERTED
+#NET "serial_id[1]" LOC = AB3;
+#NET "serial_id[2]" LOC = Y4;
+#NET "serial_id[3]" LOC = AA4;
+#
+#NET "serial_id[4]" LOC = AB4;
+#NET "serial_id[5]" LOC = Y5;
+#NET "serial_id[6]" LOC = AB5;
+#NET "serial_id[7]" LOC = Y6;
+NET "serial_id[4]" LOC = Y3;
+NET "serial_id[5]" LOC = AB3;
+NET "serial_id[6]" LOC = Y4;
+NET "serial_id[7]" LOC = AA4;
+
+
+
+NET "vme_sysreset" IOSTANDARD = LVTTL;
+NET "vme_sysreset" LOC=K21 | PULLUP;
+
+NET "vme_address[*]" IOSTANDARD = LVTTL;
+NET "vme_address[0]" LOC = C10;
+NET "vme_address[1]" LOC = A11;
+NET "vme_address[2]" LOC = C5;
+NET "vme_address[3]" LOC = B6;
+NET "vme_address[4]" LOC = B8;
+NET "vme_address[5]" LOC = C9;
+NET "vme_address[6]" LOC = D10;
+NET "vme_address[7]" LOC = C11;
+NET "vme_address[8]" LOC = E16;
+NET "vme_address[9]" LOC = A4;
+NET "vme_address[10]" LOC = C6;
+NET "vme_address[11]" LOC = A7;
+NET "vme_address[12]" LOC = C8;
+NET "vme_address[13]" LOC = D8;
+NET "vme_address[14]" LOC = A10;
+NET "vme_address[15]" LOC = D6;
+NET "vme_address[16]" LOC = C7;
+NET "vme_address[17]" LOC = D9;
+NET "vme_address[18]" LOC = D7;
+NET "vme_address[19]" LOC = B10;
+NET "vme_address[20]" LOC = D11;
+NET "vme_address[21]" LOC = A9;
+NET "vme_address[22]" LOC = A8;
+NET "vme_address[23]" LOC = A6;
+NET "vme_address[24]" LOC = A5;
+NET "vme_address[25]" LOC = F18;
+NET "vme_address[26]" LOC = F19;
+NET "vme_address[27]" LOC = E20;
+NET "vme_address[28]" LOC = F20;
+NET "vme_address[29]" LOC = F21;
+NET "vme_address[30]" LOC = E22;
+NET "vme_address[31]" LOC = F22;
+
+NET "vme_am[*]" IOSTANDARD = LVTTL;
+NET "vme_am[0]" LOC = F16;
+NET "vme_am[1]" LOC = G16;
+NET "vme_am[2]" LOC = H16;
+NET "vme_am[3]" LOC = J16;
+NET "vme_am[4]" LOC = K16;
+NET "vme_am[5]" LOC = M16;
+
+NET "vme_as" IOSTANDARD = LVTTL;
+NET "vme_as" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "vme_as" LOC = M18;
+
+#INST vme_as_IBUF_BUFG LOC = BUFGMUX_X2Y12;
+#INST CK100_BUFF_BUFG LOC = BUFGMUX_X2Y9;
+
+
+NET "vme_berr" IOSTANDARD = LVTTL;
+NET "vme_berr" LOC = G19;
+
+NET "vme_sysfail" IOSTANDARD = LVTTL;
+NET "vme_sysfail" LOC = M21;
+
+NET "vme_data[*]" IOSTANDARD = LVTTL;
+NET "vme_data[0]" LOC = A12;
+NET "vme_data[1]" LOC = B12;
+NET "vme_data[2]" LOC = C12;
+NET "vme_data[3]" LOC = A13;
+NET "vme_data[4]" LOC = C13;
+NET "vme_data[5]" LOC = A14;
+NET "vme_data[6]" LOC = B14;
+NET "vme_data[7]" LOC = C14;
+NET "vme_data[8]" LOC = D14;
+NET "vme_data[9]" LOC = A15;
+NET "vme_data[10]" LOC = C15;
+NET "vme_data[11]" LOC = D15;
+NET "vme_data[12]" LOC = A16;
+NET "vme_data[13]" LOC = B16;
+NET "vme_data[14]" LOC = C16;
+NET "vme_data[15]" LOC = A17;
+NET "vme_data[16]" LOC = C17;
+NET "vme_data[17]" LOC = D17;
+NET "vme_data[18]" LOC = A18;
+NET "vme_data[19]" LOC = B18;
+NET "vme_data[20]" LOC = C19;
+NET "vme_data[21]" LOC = D19;
+NET "vme_data[22]" LOC = A20;
+NET "vme_data[23]" LOC = B20;
+NET "vme_data[24]" LOC = C20;
+NET "vme_data[25]" LOC = D20;
+NET "vme_data[26]" LOC = A21;
+NET "vme_data[27]" LOC = B21;
+NET "vme_data[28]" LOC = D21;
+NET "vme_data[29]" LOC = B22;
+NET "vme_data[30]" LOC = C22;
+NET "vme_data[31]" LOC = D22;
+
+NET "vme_dir" IOSTANDARD = LVTTL;
+NET "vme_dir" LOC = H19;
+
+NET "vme_dsa" IOSTANDARD = LVTTL;
+NET "vme_dsa" LOC = J19;
+
+NET "vme_dsb" IOSTANDARD = LVTTL;
+NET "vme_dsb" LOC = K19;
+
+NET "vme_dtack" IOSTANDARD = LVTTL;
+NET "vme_dtack" LOC = L19;
+
+NET "vme_iack" IOSTANDARD = LVTTL;
+NET "vme_iack" LOC = G20;
+
+NET "vme_iackin" IOSTANDARD = LVTTL;
+NET "vme_iackin" LOC = H20;
+
+NET "vme_iackout" IOSTANDARD = LVTTL;
+NET "vme_iackout" LOC = K18;
+
+NET "vme_oen" IOSTANDARD = LVTTL;
+NET "vme_oen" LOC = M20;
+
+NET "vme_write" IOSTANDARD = LVTTL;
+NET "vme_write" LOC = G22;
+
+NET "vme_irq_n" IOSTANDARD = LVTTL;
+NET "vme_irq_n" LOC = K20;
+
+NET "vme_irq[*]" IOSTANDARD = LVTTL;
+NET "vme_irq[0]" LOC = L17;
+NET "vme_irq[1]" LOC = M17;
+NET "vme_irq[2]" LOC = H18;
+
+NET "vme_gap" IOSTANDARD = LVTTL;
+NET "vme_gap" LOC = M19;
+
+NET "vme_ga_n[0]" IOSTANDARD = LVTTL;
+NET "vme_ga_n[0]" LOC = F17;
+
+NET "vme_ga_n[1]" IOSTANDARD = LVTTL;
+NET "vme_ga_n[1]" LOC = G17;
+
+NET "vme_ga_n[2]" IOSTANDARD = LVTTL;
+NET "vme_ga_n[2]" LOC = H17;
+
+NET "vme_ga_n[3]" IOSTANDARD = LVTTL;
+NET "vme_ga_n[3]" LOC = J17;
+
+NET "vme_ga_n[4]" IOSTANDARD = LVTTL;
+NET "vme_ga_n[4]" LOC = K17;
+
+# MDSP signals
+NET "mdsp_hd[*]" IOSTANDARD = LVTTL;
+NET "mdsp_hd[0]" LOC = R20;
+NET "mdsp_hd[1]" LOC = P22;
+NET "mdsp_hd[2]" LOC = P21;
+NET "mdsp_hd[3]" LOC = N22;
+NET "mdsp_hd[4]" LOC = N20;
+NET "mdsp_hd[5]" LOC = M22;
+NET "mdsp_hd[6]" LOC = L22;
+NET "mdsp_hd[7]" LOC = K22;
+NET "mdsp_hd[8]" LOC = R22;
+NET "mdsp_hd[9]" LOC = T21;
+NET "mdsp_hd[10]" LOC = T22;
+NET "mdsp_hd[11]" LOC = U20;
+NET "mdsp_hd[12]" LOC = U22;
+NET "mdsp_hd[13]" LOC = V21;
+NET "mdsp_hd[14]" LOC = V22;
+NET "mdsp_hd[15]" LOC = N19;
+
+NET "mdsp_hrdy_n" IOSTANDARD = LVTTL;
+NET "mdsp_hrdy_n" LOC = Y18;
+
+NET "mdsp_hhwil" IOSTANDARD = LVTTL;
+NET "mdsp_hhwil" LOC = Y17;
+
+NET "mdsp_hcntl0" IOSTANDARD = LVTTL;
+NET "mdsp_hcntl0" LOC = Y19;
+
+NET "mdsp_hcntl1" IOSTANDARD = LVTTL;
+NET "mdsp_hcntl1" LOC = AB18;
+
+NET "mdsp_hds1_n" IOSTANDARD = LVTTL;
+NET "mdsp_hds1_n" LOC = W18;
+
+NET "mdsp_hcs_n" IOSTANDARD = LVTTL;
+NET "mdsp_hcs_n" LOC = W17;
+
+NET "mdsp_hrnw" IOSTANDARD = LVTTL;
+NET "mdsp_hrnw" LOC = AA18;
+
+#NET "rcf_hrdy_n_in" LOC = ;
+#NET "rcf_hcs_n_out" LOC = ;
+NET "mdsp_boot0" IOSTANDARD = LVTTL;
+NET "mdsp_boot0" LOC = R19;
+
+NET "mdsp_boot1" IOSTANDARD = LVTTL;
+NET "mdsp_boot1" LOC = P18;
+
+NET "mdsp_boot2" IOSTANDARD = LVTTL;
+NET "mdsp_boot2" LOC = N16;
+
+NET "mdsp_boot3" IOSTANDARD = LVTTL;
+NET "mdsp_boot3" LOC = AA21;
+
+NET "mdsp_boot4" IOSTANDARD = LVTTL;
+NET "mdsp_boot4" LOC = AB21;
+
+NET "mdsp_rst_n" IOSTANDARD = LVTTL;
+NET "mdsp_rst_n" LOC = AB19;
+
+# other signals
+NET "reset_cmds_in[*]" IOSTANDARD = LVTTL;
+NET "reset_cmds_in[0]" LOC = AB7;
+NET "reset_cmds_in[1]" LOC = V7;
+
+NET "reset_cmds_out[*]" IOSTANDARD = LVTTL;
+NET "reset_cmds_out[0]" LOC = AB8;
+NET "reset_cmds_out[1]" LOC = AB9;
+
+NET "rod_busy_from_v5" IOSTANDARD = LVCMOS33;
+NET "rod_busy_from_v5" LOC = Y15;
+
+NET "rod_busy" IOSTANDARD = LVCMOS33;
+NET "rod_busy" LOC = AB6;
+
+
+
+# *************************************************************
+# JTAG connections for accesing the FPGAs via J9
+# *************************************************************
+
+NET "main_tdi" IOSTANDARD = LVCMOS25;
+NET "main_tdi" LOC = G1;
+NET "main_tck" IOSTANDARD = LVCMOS25;
+NET "main_tck" LOC = H1;
+NET "main_tms" IOSTANDARD = LVCMOS25;
+NET "main_tms" LOC = G3;
+NET "main_tdo" IOSTANDARD = LVCMOS25;
+NET "main_tdo" LOC = H2;
+NET "main_tdo" SLEW = SLOW;
+
+NET "fpga_a_tdi" IOSTANDARD = LVCMOS25;
+NET "fpga_a_tdi" LOC = H3;
+NET "fpga_a_tdi" SLEW = SLOW;
+NET "fpga_a_tdi" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_a_tck" IOSTANDARD = LVCMOS25;
+NET "fpga_a_tck" LOC = K2;
+NET "fpga_a_tck" SLEW = SLOW;
+NET "fpga_a_tck" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_a_tms" IOSTANDARD = LVCMOS25;
+NET "fpga_a_tms" LOC = K1;
+NET "fpga_a_tms" SLEW = SLOW;
+NET "fpga_a_tms" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_a_tdo" IOSTANDARD = LVCMOS25;
+NET "fpga_a_tdo" LOC = L1;
+
+NET "fpga_b_tdi" IOSTANDARD = LVCMOS25;
+NET "fpga_b_tdi" LOC = L3;
+NET "fpga_b_tdi" SLEW = SLOW;
+NET "fpga_b_tdi" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_b_tck" IOSTANDARD = LVCMOS25;
+NET "fpga_b_tck" LOC = M2;
+NET "fpga_b_tck" SLEW = SLOW;
+NET "fpga_b_tck" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_b_tms" IOSTANDARD = LVCMOS25;
+NET "fpga_b_tms" LOC = M1;
+NET "fpga_b_tms" SLEW = SLOW;
+NET "fpga_b_tms" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_b_tdo" IOSTANDARD = LVCMOS25;
+NET "fpga_b_tdo" LOC = M3;
+
+
+NET "fpga_c_tdi" IOSTANDARD = LVCMOS25;
+NET "fpga_c_tdi" LOC = N1;
+NET "fpga_c_tdi" SLEW = SLOW;
+NET "fpga_c_tdi" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_c_tck" IOSTANDARD = LVCMOS25;
+NET "fpga_c_tck" LOC = N3;
+NET "fpga_c_tck" SLEW = SLOW;
+NET "fpga_c_tck" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_c_tms" IOSTANDARD = LVCMOS25;
+NET "fpga_c_tms" LOC = P1;
+NET "fpga_c_tms" SLEW = SLOW;
+NET "fpga_c_tms" OUT_TERM = UNTUNED_50;
+
+
+NET "fpga_c_tdo" IOSTANDARD = LVCMOS25;
+NET "fpga_c_tdo" LOC = P2;
+NET "fpga_c_tdo" PULLDOWN;
+
+# *************************************************************
+# JTAG connections to access LATTICE 
+# *************************************************************
+
+NET "lattice_tdi" IOSTANDARD = LVCMOS33; #???????????????????????
+NET "lattice_tdi" LOC = AB14;
+NET "lattice_tck" IOSTANDARD = LVCMOS33;
+NET "lattice_tck" LOC = AB17;
+NET "lattice_tms" IOSTANDARD = LVCMOS33;
+NET "lattice_tms" LOC = AB15;
+NET "lattice_tdo" IOSTANDARD = LVCMOS33;
+NET "lattice_tdo" LOC = AA16;
+
+
+# *************************************************************
+# HPI connection to the V5 PPC  --RT begin
+# *************************************************************
+NET "prm_data[0]" LOC = V1;
+NET "prm_data[1]" LOC = V2;
+NET "prm_data[2]" LOC = U1;
+NET "prm_data[3]" LOC = U3;
+NET "prm_data[4]" LOC = T1;
+NET "prm_data[5]" LOC = T2;
+NET "prm_data[6]" LOC = R1;
+NET "prm_data[7]" LOC = R3;
+NET "prm_data[8]" LOC = L4;
+NET "prm_data[9]" LOC = K4;
+NET "prm_data[10]" LOC = K5;
+NET "prm_data[11]" LOC = J6;
+NET "prm_data[12]" LOC = K6;
+NET "prm_data[13]" LOC = H4;
+NET "prm_data[14]" LOC = H5;
+NET "prm_data[15]" LOC = H6;
+NET "prm_data[16]" LOC = F1;
+NET "prm_data[17]" LOC = F2;
+NET "prm_data[18]" LOC = F3;
+NET "prm_data[19]" LOC = G4;
+NET "prm_data[20]" LOC = E1;
+NET "prm_data[21]" LOC = E3;
+NET "prm_data[22]" LOC = D1;
+NET "prm_data[23]" LOC = D2;
+NET "prm_data[24]" LOC = C1;
+NET "prm_data[25]" LOC = C3;
+NET "prm_data[26]" LOC = F5;
+NET "prm_data[27]" LOC = G6;
+NET "prm_data[28]" LOC = K8;
+NET "prm_data[29]" LOC = K7;
+NET "prm_data[30]" LOC = E4;
+NET "prm_data[31]" LOC = D5;
+NET "prm_data[*]" IOSTANDARD = LVCMOS25 | PULLUP;
+
+
+# prm ctl out 3 (AA12) and 4 (W12) are clock capable.
+# use as inputs if clockcapability required 
+
+NET  "prm_ctrl_in[0]" LOC = H8;
+NET  "prm_ctrl_in[1]" LOC = J7;
+NET  "prm_ctrl_in[2]" LOC = B1;
+NET  "prm_ctrl_in[3]" LOC = B2;
+#NET  "prm_ctrl_in[4]" LOC = F7; # swap with out 4
+#NET  "prm_ctrl_in[4]" LOC = W12; # swapped with out 4
+NET  "prm_ctrl_in[4]" LOC = W12 | CLOCK_DEDICATED_ROUTE = FALSE; 
+NET  "prm_ctrl_in[4]" TNM_NET = spidev_clk;
+TIMESPEC TS_spidev_clk = PERIOD "spidev_clk" 60 ns HIGH 50%;
+
+NET  "prm_ctrl_in[5]" LOC = G7;
+NET  "prm_ctrl_in[6]" LOC = C4;
+NET  "prm_ctrl_in[7]" LOC = D3;
+NET  "prm_ctrl_in[8]" LOC = E6;
+NET  "prm_ctrl_in[9]" LOC = E5;
+NET  "prm_ctrl_in[*]" IOSTANDARD = LVCMOS25 | PULLUP;
+# if swapping used, also change io standard 
+NET  "prm_ctrl_in[4]" IOSTANDARD = LVTTL | PULLUP;
+NET  "prm_ctrl_in[5]" IOSTANDARD = LVTTL | PULLUP;
+
+NET  "tdo_2_PPC" LOC = P4;
+NET  "tdi_from_PPC" LOC = N6;
+NET  "tms_from_PPC" LOC = M8;
+NET  "tck_from_PPC" LOC = M7;
+
+NET  "tdo_2_PPC"     IOSTANDARD = LVCMOS25 ; #| PULLUP;
+NET  "tdi_from_PPC"  IOSTANDARD = LVCMOS25 ; #| PULLUP;
+NET  "tms_from_PPC"	 IOSTANDARD = LVCMOS25 ; #| PULLUP;
+NET  "tck_from_PPC"	 IOSTANDARD = LVCMOS25 ; #| PULLUP;
+
+
+NET  "restart_PRM_from_PPC" LOC = N7;
+NET  "restart_PRM_from_PPC"	 IOSTANDARD = LVCMOS25 | PULLUP;
+
+
+
+# if used as clk, assign timespec
+NET "prm_ctrl_in[4]" TNM_NET = spiclk;
+TIMESPEC TS_spiclk = PERIOD "spiclk" 100 ns HIGH 50%;
+
+# offset in for MOSI
+net "prm_ctrl_in[5]" offset = in 10 ns before prm_ctrl_in[4];
+
+
+NET  "prm_ctrl_out[0]" LOC = W10;
+NET  "prm_ctrl_out[1]" LOC = V11;
+NET  "prm_ctrl_out[2]" LOC = R11;
+NET  "prm_ctrl_out[3]" LOC = AA12;
+#NET  "prm_ctrl_out[4]" LOC = W12; # swap with in 4
+NET  "prm_ctrl_out[4]" LOC = F7; # swapped with in 4
+NET  "prm_ctrl_out[5]" LOC = T12;
+NET  "prm_ctrl_out[*]" IOSTANDARD = LVTTL;
+# if swapping used, also change io standard 
+NET  "prm_ctrl_out[4]" IOSTANDARD = LVCMOS25;
+
+# offset out for MISO
+net "prm_ctrl_out[4]" offset = out 25 ns after prm_ctrl_in[4] falling;
+
+NET 	"prm_ga_out[4]"		LOC = V5;
+NET 	"prm_ga_out[3]"		LOC = T16;
+NET 	"prm_ga_out[2]"		LOC = V19;
+NET 	"prm_ga_out[1]"		LOC = V17;
+NET 	"prm_ga_out[0]"		LOC = Y16;
+NET  	"prm_ga_out[*]" IOSTANDARD = LVTTL;
+
+# *************************************************************
+# RESET SIGNALS
+# *************************************************************
+NET "reset_v5"					LOC = V9  | IOSTANDARD = LVTTL;
+NET "reset_S6A_from_prm"	      	    	       LOC = R7  | IOSTANDARD = LVTTL;
+NET "reset_S6B_from_prm"	      	    	       LOC = U10 | IOSTANDARD = LVTTL;
+NET "reset_processor_core_select" 		       LOC = W14 | IOSTANDARD = LVTTL;
+
+NET  "prm_strobe0" LOC = T3 | IOSTANDARD = LVCMOS25;
+
+# *************************************************************
+# END HPI connection to the V5 PPC  --RT
+# *************************************************************
+

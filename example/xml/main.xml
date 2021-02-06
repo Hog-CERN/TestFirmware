@@ -1,0 +1,5 @@
+<!-- Top level efex address table -->
+
+<node id="TOP">
+	<node id="common_IdVersion" module="file://common.xml" address="0x0"/>
+</node>
