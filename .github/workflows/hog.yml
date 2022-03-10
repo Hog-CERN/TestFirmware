@@ -11,13 +11,13 @@ jobs:
         with: 
         #          submodules: 'true'
           fetch-depth: 0
-      - name: Checkout submodules      
-        run: git submodule update --init --recursive
-      - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
-      - run: echo $PATH
-      - run: git fetch -p
-      - run: git --version
-      - run: cd Hog/ && git tag -v
-      - run: ./Hog/CreateProject.sh example
+        run: |
+                echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
+                echo $PATH
+                git fetch -p
+                git --version
+                cd Hog/ && git tag -v
+                cd ..
+                ./Hog/CreateProject.sh example
       
       
