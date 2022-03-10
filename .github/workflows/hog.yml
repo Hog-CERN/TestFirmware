@@ -11,14 +11,15 @@ jobs:
       with:
          submodules: recursive
          fetch-depth: 0
-    - run: |
+    - name: Create Project
+      run: |
               git submodule init
-              git submodule update  
+              git submodule update --remote 
               export PATH=${HOG_PATH}:$PATH
               echo $PATH
               git fetch -p
               git --version
-              cd Hog/ && git remote -v
+              cd Hog/ && git fetch -p
               cd ..
               ./Hog/CreateProject.sh example
       
