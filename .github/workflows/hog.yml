@@ -22,6 +22,7 @@ jobs:
               cd Hog/ && git fetch -p
               cd ..
               ./Hog/CreateProject.sh example
+              git diff
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
