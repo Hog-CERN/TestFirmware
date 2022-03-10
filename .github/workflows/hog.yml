@@ -6,11 +6,13 @@ jobs:
     env:
       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with: 
-          submodules: 'true'
+        #          submodules: 'true'
           fetch-depth: 0
-
+      - name: Checkout submodules      
+        run: git submodule update --init --recursive
       - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
       - run: git fetch -p
