@@ -7,7 +7,7 @@ jobs:
       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
       - name: Checkout repository
-          uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - run: |
               git submodule init
               git submodule update  
