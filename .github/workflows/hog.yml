@@ -4,7 +4,7 @@ jobs:
   check-bats-version:
     runs-on: self-hosted
     env:
-      HOG_PATH: /opt/Xilinx/Vivado/2019.2/bin
+      HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
       - uses: actions/checkout@v2
         with: 
@@ -12,6 +12,7 @@ jobs:
       - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
       - run: git fetch -p
+      - run: cd Hog/ && git remove -v
       - run: ./Hog/CreateProject.sh example
       
       
