@@ -11,6 +11,7 @@ jobs:
       with:
          submodules: recursive
          fetch-depth: 0
+         ssh-key: ${{ secrets.HOG_KEY }}
     - name: Create Project
       run: |
               git submodule init
