@@ -12,6 +12,7 @@ jobs:
       - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
       - run: git fetch -p
+      - run: git --version
       - run: cd Hog/ && git tag -v
       - run: ./Hog/CreateProject.sh example
       
