@@ -12,7 +12,7 @@ jobs:
       - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
       - run: git fetch -p
-      - run: cd Hog/ && git remote -v
+      - run: cd Hog/ && git tags -v
       - run: ./Hog/CreateProject.sh example
       
       
