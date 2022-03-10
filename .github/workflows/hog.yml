@@ -11,5 +11,7 @@ jobs:
           submodules: 'true'
       - run: echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
+      - run: git fetch -p
       - run: ./Hog/CreateProject.sh example
+      
       
