@@ -6,18 +6,15 @@ jobs:
     env:
       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with: 
-          submodules: 'true'
-          fetch-depth: 0
       - run: |
-                echo "PATH=${HOG_PATH}:$PATH" >> $GITHUB_ENV
-                echo $PATH
-                git fetch -p
-                git --version
-                cd Hog/ && git tag -v
-                cd ..
-                ./Hog/CreateProject.sh example
+              git submodule init
+              git submodule update  
+              export PATH=${HOG_PATH}:$PATH
+              echo $PATH
+              git fetch -p
+              git --version
+              cd Hog/ && git tag -v
+              cd ..
+              ./Hog/CreateProject.sh example
       
       
