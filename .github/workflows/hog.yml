@@ -18,7 +18,7 @@ jobs:
               echo $PATH
               git fetch -p
               git --version
-              cd Hog/ && git tag -v
+              cd Hog/ && git remote -v
               cd ..
               ./Hog/CreateProject.sh example
       
