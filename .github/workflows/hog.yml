@@ -53,6 +53,8 @@ jobs:
       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
       - uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0
       - uses: webfactory/ssh-agent@v0.5.4
         with:
             ssh-private-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}
