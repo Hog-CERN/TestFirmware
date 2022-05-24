@@ -19,17 +19,17 @@
 #           git remote -v # for debug only 
 #           git show-ref # for debug only 
 #           git push --follow-tags origin HEAD:master
-#     - name: Create Project
-#       run: |
-#               git submodule init
-#               git submodule update --remote 
-#               export PATH=${HOG_PATH}:$PATH
-#               echo $PATH
-#               git fetch -p
-#               git --version
-#               cd Hog/ && git fetch -p
-#               cd ..
-#               ./Hog/CreateProject.sh example
+  #     - name: Create Project
+  #       run: |
+  #               git submodule init
+  #               git submodule update --remote 
+  #               export PATH=${HOG_PATH}:$PATH
+  #               echo $PATH
+  #               git fetch -p
+  #               git --version
+  #               cd Hog/ && git fetch -p
+  #               cd ..
+  #               ./Hog/CreateProject.sh example
 #     - name: Archive production artifacts
 #       uses: actions/upload-artifact@v3
 #       with:
@@ -48,22 +48,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
+    env:
+      HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
       - uses: webfactory/ssh-agent@v0.5.4
         with:
             ssh-private-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
-
-      - name: Do stuff
-        run: yarn do-stuff  
+     - name: Create Project
+        run: |
+                git submodule init
+                git submodule update --remote 
+                export PATH=${HOG_PATH}:$PATH
+                echo $PATH
+                git fetch -p
+                git --version
+                cd Hog/ && git fetch -p
+                cd ..
+                ./Hog/CreateProject.sh example     
