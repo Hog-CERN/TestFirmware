@@ -1,45 +1,3 @@
-# name: Hog
-# on: [push]
-# jobs:
-#   check-bats-version:
-#     runs-on: self-hosted
-#     env:
-#       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
-#     steps:
-#     - name: Checkout repository
-#       uses: actions/checkout@v2
-#       with:
-#          submodules: recursive
-#          ssh-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}`
-#          fetch-depth: 0
-#       run : |
-#           npm run release
-#           git remote rm origin
-#           git remote add origin https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/project/repo.git
-#           git remote -v # for debug only 
-#           git show-ref # for debug only 
-#           git push --follow-tags origin HEAD:master
-#     - name: Create Project
-#       run: |
-#               git submodule init
-#               git submodule update --remote 
-#               export PATH=${HOG_PATH}:$PATH
-#               echo $PATH
-#               git fetch -p
-#               git --version
-#               cd Hog/ && git fetch -p
-#               cd ..
-#               ./Hog/CreateProject.sh example
-#     - name: Archive production artifacts
-#       uses: actions/upload-artifact@v3
-#       with:
-#         name: Create artifacts
-#         path: |
-#           Projects
-          
-      
-# .github/workflows/deploy.yml
-
 name: Deploy
 
 on:
@@ -47,30 +5,9 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    runs-on: self-hosted
-    env:
-      HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
-    steps:
-      - uses: actions/checkout@v2
-        with: 
-          fetch-depth: 0
-      - uses: webfactory/ssh-agent@v0.5.4
-        with:
-            ssh-private-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}
-      - name: Hog
-        run: |
-              git submodule init
-              git submodule update --remote
-              export PATH=${HOG_PATH}:$PATH
-              git fetch -p
-              git --version
-              cd Hog/ && git fetch -p
-              cd ..
-              ./Hog/LaunchWorkflow.sh example
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: Create artifacts
-          path: |
-            Projects
+  call-workflow-passing-data:
+    uses: hog-CERN/Hog/YAML/GitHub/hog.yml@144-hog4github
+    with:
+      PROJECT_NAME: example
+    secrets:
+      SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
