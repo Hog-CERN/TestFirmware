@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: hog-CERN/Hog/YAML/GitHub/hog.yml@144-hog4github
+    uses: hog-CERN/hog-workflow/.github/workflows/hog.yml@main
     with:
       PROJECT_NAME: example
     secrets:
