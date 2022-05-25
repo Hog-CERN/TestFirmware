@@ -10,5 +10,6 @@ jobs:
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
     with:
-      BUILD_PROJECTS: "[example, proj.1]"
+      BUILD_PROJECTS: >-
+        ["example", "proj.1"]
     
