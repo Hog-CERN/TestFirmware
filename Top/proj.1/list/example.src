@@ -1,0 +1,4 @@
+example/top/top_proj.vhd
+example/src/adder.vhd
+IP/fifo_generator_1/fifo_generator_1.xci
+TestSubmodule/src/different_adder.vhd

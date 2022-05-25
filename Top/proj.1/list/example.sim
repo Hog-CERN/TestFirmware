@@ -1,0 +1,4 @@
+#Simulator xsim
+example/sim/tb_proj.vhd topsim=tb_proj
+example/sim/TB_example_wave.do  wavefile
+example/sim/TB_example.udo dofile

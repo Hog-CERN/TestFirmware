@@ -5,18 +5,10 @@ on:
     branches: [ master, main ]
 
 jobs:
-  merge-and-tag:
-    uses: hog-CERN/hog-workflows/.github/workflows/merge-and-tag.yml@main
-    secrets:
-      SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
   hog-workflow:
-    uses: hog-CERN/hog-workflows/.github/workflows/hog.yml@main
-    strategy:
-      matrix:
-        projects: [example]
-    with:
-      PROJECT_NAME: ${{ matrix.projects }}
-    needs: merge-and-tag
+    uses: hog-CERN/hog-workflows/.github/workflows/pull-request.yml@main
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
+    with:
+      BUILD_PROJECTS: "[example, proj.1]"
     
