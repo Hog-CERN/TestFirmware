@@ -1,12 +1,12 @@
 name: Deploy
 
 on:
-  push:
-    branches: [ master ]
+  pull_request:
+    branches: [ master, main ]
 
 jobs:
   call-workflow-passing-data:
-    uses: hog-CERN/hog-workflows/.github/workflows/hog.yml@main
+    uses: hog-CERN/hog-workflows/.github/workflows/merge-and-tag.yml@main
     with:
       PROJECT_NAME: example
     secrets:
