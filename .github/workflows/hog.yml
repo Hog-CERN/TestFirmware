@@ -19,4 +19,4 @@ jobs:
     needs: merge-and-tag
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
-    needs:
+    
