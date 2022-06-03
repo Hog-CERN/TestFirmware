@@ -9,6 +9,7 @@ jobs:
     uses: hog-CERN/hog-workflows/.github/workflows/pull-request.yml@main
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
+      HOG_TOKEN: ${{ secrets.HOG_TOKEN }}
     with:
       BUILD_PROJECTS: >-
         ["example", "proj.1"]
