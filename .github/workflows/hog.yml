@@ -10,6 +10,8 @@ jobs:
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
       HOG_TOKEN: ${{ secrets.HOG_TOKEN }}
+      HOG_MAIL: ${{ secrets.HOG_MAIL}}
+      HOG_USER: ${{ secrets.HOG_USER}}
     with:
       BUILD_PROJECTS: >-
         ["example", "proj.1"]
