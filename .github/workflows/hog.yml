@@ -9,11 +9,12 @@ jobs:
     uses: hog-CERN/hog-workflows/.github/workflows/pull-request.yml@main
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
-      HOG_TOKEN: ${{ secrets.HOG_TOKEN }}
-      HOG_MAIL: ${{ secrets.HOG_MAIL}}
+      HOG_PUSH_TOKEN: ${{ secrets.HOG_PUSH_TOKEN }}
+      HOG_EMAIL: ${{ secrets.HOG_EMAIL}}
       HOG_USER: ${{ secrets.HOG_USER}}
       HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
       HOG_CHECK_PROJVER: "1"
+      HOG_XIL_LICENSE: ${{ secrets.HOG_XIL_LICENSE }}
     with:
       BUILD_PROJECTS: >-
         ["example", "proj.1"]
