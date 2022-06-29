@@ -12,6 +12,8 @@ jobs:
       HOG_TOKEN: ${{ secrets.HOG_TOKEN }}
       HOG_MAIL: ${{ secrets.HOG_MAIL}}
       HOG_USER: ${{ secrets.HOG_USER}}
+      HOG_PATH: /opt/Xilinx/Vivado/2020.2/bin
+      HOG_CHECK_PROJVER: 1
     with:
       BUILD_PROJECTS: >-
         ["example", "proj.1"]
