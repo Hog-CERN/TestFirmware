@@ -18,4 +18,6 @@ jobs:
     with:
       BUILD_PROJECTS: >-
         ["example", "proj.1"]
+      SIM_PROJECTS: >-
+        ["example"]
     
