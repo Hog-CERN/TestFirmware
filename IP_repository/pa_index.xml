@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Index Version="1" Minor="0">
+	<Repository value="`git rev-parse --show-toplevel`/IP_repository">
+	</Repository>
+</Index>
+
