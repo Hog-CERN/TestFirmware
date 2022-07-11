@@ -16,8 +16,8 @@ jobs:
       HOG_CHECK_PROJVER: "1"
       HOG_XIL_LICENSE: ${{ secrets.HOG_XIL_LICENSE }}
     with:
-      # BUILD_PROJECTS: >-
-      #   ["example", "proj.1"]
+      BUILD_PROJECTS: >-
+        ["example"]
       SIM_PROJECTS: >-
         ["example"]
     
