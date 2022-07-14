@@ -1,11 +1,9 @@
-name: Deploy
+name: Tag
 
 on:
   push:
     branches: 
-      - main 
       - master
-      - ${{ secrets.HOG_TARGET_BRANCH }
 
 jobs:
   hog-workflow:
