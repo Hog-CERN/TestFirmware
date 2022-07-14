@@ -1,10 +1,11 @@
 name: Tag
 
+
 on:
   push:
     branches: 
       - master
-
+      
 jobs:
   hog-workflow:
     uses: hog-CERN/hog-workflows/.github/workflows/Hog-main.yml@main
