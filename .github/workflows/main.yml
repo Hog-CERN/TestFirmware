@@ -5,7 +5,7 @@ on:
     branches: 
       - main 
       - master
-      - ${{ secrets.HOG_TARGET_BRANCH }
+      - ${{ secrets.HOG_TARGET_BRANCH }}
 
 jobs:
   hog-workflow:
