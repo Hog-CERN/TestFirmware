@@ -14,4 +14,8 @@ jobs:
       HOG_EMAIL: ${{ secrets.HOG_EMAIL}}
       HOG_USER: ${{ secrets.HOG_USER}}
 
+- name: Fast Forward PR
+  uses: endre-spotlab/fast-forward-js-action@2.1
+
+
     
