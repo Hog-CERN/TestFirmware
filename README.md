@@ -1,6 +1,6 @@
 # TestFirmware
 dasd
-ai:
+dai:
 a
 t:wq
 dasd
