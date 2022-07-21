@@ -3,4 +3,4 @@
 	url = git@github.com:Hog-CERN/TestSubmodule.git
 [submodule "Hog"]
 	path = Hog
-	url = https://gitlab.cern.ch/hog/Hog.git
+	url = https://gitlab.com/hog-cern/Hog.git
