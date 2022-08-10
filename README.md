@@ -1,4 +1,3 @@
-da
 # TestFirmware
 dasd
 dai:
