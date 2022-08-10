@@ -8,11 +8,7 @@ jobs:
   fast_forward:
     name: Fast-forward
     runs-on: ubuntu-latest
-    if: |
-      github.event.issue.pull_request &&
-      github.event.comment.author_association == 'OWNER' && 
-      contains(github.event.comment.body, '/fast-forward')
-
+      if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/fast-forward')
     steps:
       - name: Generate access token
         uses: tibdex/github-app-token@v1
