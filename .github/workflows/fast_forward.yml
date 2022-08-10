@@ -1,25 +1,40 @@
-on: 
+name: Fast-forward
+
+on:
   issue_comment:
-    types: [created]
+    types: [created, edited]
 
 jobs:
-  fast_forward_job:
-    name: Fast Forward
-    if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/fast-forward')   
+  fast_forward:
+    name: Fast-forward
     runs-on: ubuntu-latest
+    if: |
+      github.event.issue.pull_request &&
+      github.event.comment.author_association == 'OWNER' && 
+      contains(github.event.comment.body, '/fast-forward')
+
     steps:
-      # To use this repository's private action, you must check out the repository
-      - uses: actions/checkout@v2
-        with: 
+      - name: Generate access token
+        uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.LOKSMITH_ID }}
+          private_key: ${{ secrets.LOCKSMITH_PRIVATE_KEY }}
+
+      - name: Fetch repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
           fetch-depth: 0
-      - uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}
-      # Basic use case example
-      - name: Fast Forward PR
-        id: ff-action
-        uses: endre-spotlab/fast-forward-js-action@2.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          success_message: 'Success! Fast forwarded ***target_base*** to ***source_head***! ```git checkout target_base && git merge source_head --ff-only``` '
-          failure_message: 'Failed! Cannot do fast forward!'
+
+      - name: Checkout pull request
+        run: hub pr checkout ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+      - name: Fast-forward & push
+        run: |
+          export PR_COMMIT=$(git rev-parse HEAD)
+          git checkout main
+          git merge --ff-only $PR_COMMIT
+          git push origin main
