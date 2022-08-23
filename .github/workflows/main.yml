@@ -15,3 +15,4 @@ jobs:
       HOG_USER: ${{ secrets.HOG_USER}}
     with:
       HOG_CREATE_OFFICIAL_RELEASE: True
+      HOG_OFFICIAL_BIN_EOS_PATH: "/eos/user/h/hog/www/firmware/github/official/"
