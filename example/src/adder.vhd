@@ -19,7 +19,7 @@ begin
 add_proc : process( clk )
 begin
     if rising_edge(clk) then
-        DataOut <= std_logic_vector(unsigned(DataIn) + 1);
+        DataOut <= std_logic_vector(unsigned(DataIn) + 2);
     end if;
 end process ; -- add_proc
   
