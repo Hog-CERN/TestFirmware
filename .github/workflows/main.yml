@@ -18,4 +18,4 @@ jobs:
       EOS_PASSWORD: ${{ secrets.EOS_PASSWORD}}
     with:
       HOG_CREATE_OFFICIAL_RELEASE: True
-      HOG_BIN_EOS_PATH: "/eos/user/h/hog/www/firmware/github/official/"
+      HOG_OFFICIAL_BIN_PATH: "/eos/user/h/hog/www/firmware/github/official/"
