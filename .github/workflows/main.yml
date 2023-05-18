@@ -8,7 +8,7 @@ on:
 
 jobs:
   hog-workflow:
-    uses: hog-CERN/Hog/.github/workflows/Hog-main.yml@remove_upgrade_ip
+    uses: hog-CERN/Hog/.github/workflows/Hog-main.yml@270-non-eos-path-to-archive-binary-files
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
       HOG_PUSH_TOKEN: ${{ secrets.HOG_PUSH_TOKEN }}
@@ -18,4 +18,4 @@ jobs:
       EOS_PASSWORD: ${{ secrets.EOS_PASSWORD}}
     with:
       HOG_CREATE_OFFICIAL_RELEASE: True
-      HOG_OFFICIAL_BIN_EOS_PATH: "/eos/user/h/hog/www/firmware/github/official/"
+      HOG_BIN_EOS_PATH: "/eos/user/h/hog/www/firmware/github/official/"
