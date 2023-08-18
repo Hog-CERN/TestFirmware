@@ -1,4 +1,4 @@
-example/top/top_example.vhd
+example/top/top_example.vhd top=top_example
 example/src/*.vhd 93
 IP/fifo_generator_1/fifo_generator_1.xci
 
