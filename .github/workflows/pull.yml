@@ -6,7 +6,7 @@ on:
 
 jobs:
   hog-workflow:
-    uses: hog-CERN/Hog/.github/workflows/Hog-pull.yml@282-add-template-for-parallel-gitlab-jobs
+    uses: hog-CERN/Hog/.github/workflows/Hog-pull.yml@develop
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
       HOG_PUSH_TOKEN: ${{ secrets.HOG_PUSH_TOKEN }}

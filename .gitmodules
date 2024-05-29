@@ -1,6 +1,6 @@
 [submodule "TestSubmodule"]
 	path = TestSubmodule
-	url = git@github.com:Hog-CERN/TestSubmodule.git
+	url = ../TestSubmodule.git
 [submodule "Hog"]
 	path = Hog
 	url = https://gitlab.com/hog-cern/Hog.git
