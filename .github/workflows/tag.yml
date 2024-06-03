@@ -1,14 +1,13 @@
-name: Main
+name: Tag
 
 on:
   push:
-    branches: 
-      - master
-      - develop
+    tags:
+      - 'v*.*.*'
 
 jobs:
   hog-workflow:
-    uses: hog-CERN/Hog/.github/workflows/Hog-main.yml@346-move-to-gitlab-cli
+    uses: hog-CERN/Hog/.github/workflows/Hog-tag.yml@346-move-to-gitlab-cli
     secrets:
       SUBMODULE_CONTENT_PULL_KEY: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY  }}
       HOG_PUSH_TOKEN: ${{ secrets.HOG_PUSH_TOKEN }}
