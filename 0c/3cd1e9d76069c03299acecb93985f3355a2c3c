@@ -1,0 +1,3 @@
+15295604828 auto/271-support-ghdl ENABLE_DEVELOP_BRANCH 1
+MAJOR_VERSION major_version/ MINOR_VERSION minor_version/ HOTFIX hotfix/
+v0.42.0
