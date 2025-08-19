@@ -3,4 +3,4 @@
 	url = ../TestSubmodule.git
 [submodule "Hog"]
 	path = Hog
-	url = https://gitlab.com/hog-cern/Hog.git
+	url = ../Hog.git
