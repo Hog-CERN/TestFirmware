@@ -6,7 +6,7 @@ on:
 
 jobs:
   hog-workflow:
-    uses: hog-CERN/Hog/.github/workflows/Hog-pull.yml@6f7e09db64698c8d2645ee56217bc30fb2591039
+    uses: hog-CERN/Hog/.github/workflows/Hog-pull.yml@6a407e9edf1d771267e1bd5400304aa2643f92dd
     secrets:
       HOG_PUSH_TOKEN: ${{ secrets.HOG_PUSH_TOKEN }}
       HOG_EMAIL: ${{ secrets.HOG_EMAIL}}
